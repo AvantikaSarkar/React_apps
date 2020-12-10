@@ -1,9 +1,62 @@
-.todo-list {
+body {
 
-  margin-top: 10%;
-  margin-left: 30%;
-  margin-right: 30%;
-  background-color : beige;
-  text-align: center;
+
+  background-image: url("https://img.etimg.com/thumb/msid-74945159,width-1070,height-580,overlay-etpanache/photo.jpg");
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+  background-size: cover;
 }
 
+.todo-list {
+
+  margin : auto;
+  width : 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #efefef;
+ 
+  box-shadow:
+    /* The top layer shadow */
+        0 1px 1px rgba(0,0,0,0.15),
+            /* The second layer */
+        0 10px 0 -5px #eee,
+            /* The second layer shadow */
+        0 10px 1px -4px rgba(0,0,0,0.15),
+            /* The third layer */
+        0 20px 0 -10px #eee,
+            /* The third layer shadow */
+        0 20px 1px -9px rgba(0,0,0,0.15);
+  
+  background-color : beige;
+  padding: 30px;
+
+
+  
+}
+
+.todo-item {
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 40px 30px 10px;
+    width: 70%;
+    border-bottom: 1px solid #cecece;
+    border-radius: 10%;
+    
+    font-family: Roboto, sans-serif;
+    font-weight: 100;
+    font-size: 15px;
+}
+
+input[type=checkbox] {
+  margin-right: 30px;
+  font-size: 300px;
+}
+
+
+input[type=checkbox]:focus {
+  outline: 10;
+}

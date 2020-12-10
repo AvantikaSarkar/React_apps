@@ -1,8 +1,8 @@
 const tasks = [
     {
         taskId : 1,
-        taskName : 'Complete React Tutorial',
-        completed : true
+        taskName : 'Complete React Tutorial - complete by today - 10/12 finish from Scrimba blah blah',
+        completed : false
     },
 
     {

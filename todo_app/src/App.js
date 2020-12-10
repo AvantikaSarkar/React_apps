@@ -5,11 +5,44 @@ import TodoItem from './Components/TodoItem'
 import tasks from './Components/Tasks'
 
 
-function TodoList(){
-
-  const taskArray = tasks.map( tasks => <TodoItem key={tasks.taskId} taskName={tasks.taskName} />)
+class TodoList extends React.Component{
 
 
+  constructor(){
+    super()
+    this.state={
+      todos : tasks
+    }
+    this.HandleChange = this.HandleChange.bind(this)
+}
+
+  HandleChange(tid){
+
+    console.log("value changed", tid)
+
+    this.setState (prevState => {
+      const updatedTodos = prevState.todos.map(todoItem => {
+        if (todoItem.taskId === tid )
+        {
+          return {
+            ...todoItem,
+            completed: !todoItem.completed
+          }
+        }
+        
+        return todoItem
+      })
+
+      console.log(updatedTodos)
+      return {
+        todos : updatedTodos
+      }
+    })
+  }
+
+
+  render(){
+    const taskArray = this.state.todos.map( tasks => <TodoItem key={tasks.taskId} item= {tasks} HandleChange ={this.HandleChange}/>)
   return (
     <div className='todo-list'>
       <Greeting />
@@ -18,5 +51,10 @@ function TodoList(){
     </div>
   )
 }
+}
 
-export default TodoList;
+export default TodoList
+
+
+
+
