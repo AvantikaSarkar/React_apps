@@ -1,5 +1,20 @@
+import React from 'react'
+import Header from './Header'
+import './App.css'
+import MemeGenerator from './MemeGenerator'
 
-import './App.css';
+function App(){
+
+    return (
+        <div>
+            Meme Generator 
+
+            <Header />
+            <MemeGenerator />
+        </div>
+    )
+}
+
 
 
 
